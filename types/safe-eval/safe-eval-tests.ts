@@ -18,3 +18,12 @@ var evaluated = safeEval(code); // 25
 // no access to Node.js objects
 var code = 'process';
 safeEval(code); // THROWS!
+
+// your own context API
+var code = '{ apple: a()}';
+var context = {
+    a: function () {
+        return 'APPLE';
+    },
+};
+var evaluated = safeEval(code, context);

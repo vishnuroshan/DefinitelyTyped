@@ -2,7 +2,7 @@
 // Project: https://www.npmjs.com/package/safe-eval
 // Definitions by: Vishnu Roshan <https://github.com/vishnuroshan>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-export = safe_eval;
+export default safe_eval;
 
 interface RunningScriptOptions {
     filename?: string | undefined;
@@ -25,4 +25,4 @@ interface Context {
  * @param {RunningScriptOptions} opts is the [options object](https://nodejs.org/api/vm.html) for the vm executing the code.
  * @returns {any} the result of the very last statement executed in the script.
  */
-declare function safe_eval(code: string, context: Context, opts: RunningScriptOptions): any;
+declare function safe_eval(code: string, context?: Context, opts?: RunningScriptOptions): any;
