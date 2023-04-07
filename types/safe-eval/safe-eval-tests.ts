@@ -1,29 +1,29 @@
-import safeEval from 'safe-eval';
+const safeEval = require('safe-eval');
 
-var code = '"app" + "le"';
-var evaluated = safeEval(code); // "apple"
+let code = '"app" + "le"';
+safeEval(code); // "apple"
 
 // math
-var code = 'Math.floor(22/7)';
-var evaluated = safeEval(code); // 3.142857142857143
+code = 'Math.floor(22/7)';
+safeEval(code); // 3.142857142857143
 
 // JSON
-var code = '{name: "Borat", hobbies: ["disco dance", "sunbathing"]}';
-var evaluated = safeEval(code); // {name: "Borat", hobbies: ["disco dance", "sunbathing"]}
+code = '{name: "Borat", hobbies: ["disco dance", "sunbathing"]}';
+safeEval(code); // {name: "Borat", hobbies: ["disco dance", "sunbathing"]}
 
 // function expression
-var code = '(function square(b) { return b * b; })(5)';
-var evaluated = safeEval(code); // 25
+code = '(function square(b) { return b * b; })(5)';
+safeEval(code); // 25
 
 // no access to Node.js objects
-var code = 'process';
+code = 'process';
 safeEval(code); // THROWS!
 
 // your own context API
-var code = '{ apple: a()}';
-var context = {
+code = '{ apple: a()}';
+const context = {
     a: function () {
         return 'APPLE';
     },
 };
-var evaluated = safeEval(code, context);
+safeEval(code, context);

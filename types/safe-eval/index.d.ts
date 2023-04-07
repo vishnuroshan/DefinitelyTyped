@@ -2,7 +2,7 @@
 // Project: https://www.npmjs.com/package/safe-eval
 // Definitions by: Vishnu Roshan <https://github.com/vishnuroshan>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-export default safe_eval;
+export = safe_eval;
 
 interface RunningScriptOptions {
     filename?: string | undefined;
